@@ -1,0 +1,164 @@
+.error404 {
+	.layout:first-child:not(.overlap):not(.hero) {
+		margin-top: 110px;
+	}
+	.layout.basic-content {
+		margin-bottom: 0;
+		height: calc(100vh - 110px);
+		.wrapper {
+			width: 100%;
+			@include center;
+		}
+	}
+}
+
+.layout.basic-content {
+
+	.intro {
+		text-align: center;
+		.divider-light:after {
+			margin-left: auto;
+			margin-right: auto;
+		}
+		.smallcaps {
+			color: $light-blue;
+		}
+	}
+
+	.content {
+		padding: $content-padding-small;
+		@media screen and ($tablet) {
+			padding: $content-padding-medium;
+		}
+		@media screen and ($laptop) {
+			padding: $content-padding-large;
+		}
+	}
+
+	.buttons {
+		justify-content: center;
+	}
+
+	.half-columns,
+	.balanced-columns {
+		display: flex;
+		.copy--first {
+			@media screen and ($tablet) {
+				padding-right: 1.5em;
+			}
+		}
+		.copy--second {
+			@media screen and ($tablet) {
+				padding-left: 1.5em;
+			}
+		}
+		&.align-top {
+			align-items: flex-start;
+		}
+		&.align-center {
+			align-items: center;
+		}
+		&.align-bottom {
+			align-items: flex-end;
+		}
+	}
+
+	.half-columns {
+		flex-wrap: wrap;
+		.copy--first,
+		.copy--second {
+			width: 100%;
+			@media screen and ($tablet) {
+				width: 50%;
+			}
+		}
+	}
+
+	.third-columns {
+		display: flex;
+		flex-wrap: wrap;
+		.copy--first,
+		.copy--second,
+		.copy--third {
+			width: 100%;
+			@media screen and ($tablet) {
+				width: 33.333%;
+			}
+		}
+		.copy--first {
+			@media screen and ($tablet) {
+				padding-right: 1.5em;
+			}
+		}
+		.copy--second {
+			@media screen and ($tablet) {
+				padding-right: 1.5em;
+			}
+		}		
+	}
+	
+	.fourth-columns {
+		display: flex;
+		flex-wrap: wrap;
+		.copy--first,
+		.copy--second,
+		.copy--third,
+		.copy--fourth {
+			width: 100%;
+			@media screen and ($tablet) {
+				width: 25%;
+			}
+		}
+		.copy--first {
+			@media screen and ($tablet) {
+				padding-right: 1.5em;
+			}
+		}
+		.copy--second {
+			@media screen and ($tablet) {
+				padding-right: 1.5em;
+			}
+		}
+		.copy--third {
+			@media screen and ($tablet) {
+				padding-right: 1.5em;
+			}
+		}				
+	}	
+
+    .balanced-columns {
+        flex-direction: column;
+		justify-content: center;
+		@media screen and ($tablet) {
+			flex-direction: row;
+		}
+		.copy--first,
+		.copy--second {
+			@media screen and ($tablet) {
+				min-width: 230px;
+			}
+		}
+    }
+
+    ul, ol {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 18px;
+		@media screen and ($tablet) {
+			padding-left: 20px;
+	        // margin-bottom: 20px;
+		}
+		li {
+			padding: 4px 0;
+		}
+    }
+
+    ul {
+        list-style: disc;
+    }
+
+    ol {
+        list-style: decimal;
+    }
+
+}

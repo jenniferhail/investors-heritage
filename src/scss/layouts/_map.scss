@@ -1,0 +1,187 @@
+.layout.product-map {
+	padding-top: 60px;
+	@media screen and ($tablet) {
+		padding-top: 0;
+	}
+	.intro {
+		margin-bottom: 40px;
+	}
+	.map-flex {
+		@media screen and ($tablet) {
+			display: flex;
+			flex-wrap: nowrap;
+			align-items: center;
+		}
+		.map-wrapper {
+			// flex: 1 0 auto;
+			flex: 1 0 0;
+			padding: 0 30px;
+			@media screen and ($tablet) {
+				padding: 0;
+			}
+		}
+		.map-legend {
+			max-width: 280px;
+			margin: 30px auto 0;
+			text-align: center;
+			@media screen and ($tablet) {
+				flex: 0 0 auto;
+				max-width: none;
+				margin: 0;
+				padding-left: 40px;
+				text-align: left;
+			}
+			label.h3 {
+				margin-bottom: 30px;
+			}
+			.dropdown {
+				margin-bottom: 40px;
+			}
+		}
+	}
+	.map-svg {
+		position: relative;
+		.status {
+			fill: #e6e6e6;
+			transition: fill $base-timing $base-duration;
+		}
+		.active {
+			 fill: #6ecad9;
+			 transition: fill $base-timing $base-duration;
+		}
+		.pending {
+			 fill: #c6e6f0;
+			  transition: fill $base-timing $base-duration;
+		}
+		canvas {
+		    display: block;
+		    width: 100%;
+		    visibility: hidden;
+		}
+		svg {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		}
+	}
+
+	select {
+		/* Make sure the select is wider than the container so we can clip the arrow */
+		width:110%;
+		max-width:110%;
+		min-width:110%;
+		/* Remove select styling */
+		appearance: none;
+		-webkit-appearance: none;
+		/* Ugly Firefox way of doing it */
+		-moz-appearance: window;
+		text-indent: 0.01px;
+		text-overflow: "";
+		/* Magic font size number to prevent iOS text zoom */
+		font-size: 16px;
+		font-weight: 400;
+		background:none;
+		border: none;
+		outline: none;
+		/* Padding works surpringly well */
+		padding: .4em 19% .2em 0;
+		line-height:1.2;
+		margin:.2em;
+    }
+
+	/* This hides native dropdown button arrow in IE */
+	select::-ms-expand {
+		display: none;
+	}
+
+	/* Custom arrow - could be an image, SVG, icon font, etc. */
+	.dropdown:after {
+		background: none;
+		color: #0d1d37;
+		content: "\25BC";
+		font-size: .7em;
+		padding:0;
+		position: absolute;
+		right: 0;
+		top: 7px;
+		z-index: 1;
+		/* This hack makes the select behind the arrow clickable in some browsers */
+		pointer-events:none;
+	}
+
+	/* Focus style */
+	// select:focus {
+	//   outline: none;
+	//   box-shadow: 0 0 3px 3px rgba(180,222,250, .85);
+	// }
+
+	/* This hides focus around selected option in FF */
+	select:-moz-focusring {
+		color: transparent;
+		text-shadow: 0 0 0 #000;
+	}
+
+	/* These are just demo button-y styles, style as you like */
+	.button {
+		position: relative;
+		border-bottom: 1px solid #bbb;
+		border-radius: 0;
+		background: $white; /* Old browsers */
+	}
+
+	.map-key {
+		span {
+			margin-right: 20px;
+			&:last-child {
+				margin-right: 0;
+			}
+			&:before {
+				content: '';
+			    display: inline-block;
+			    width: 15px;
+			    height: 15px;
+				margin-right: 10px;
+			}
+			&.map-yes:before {
+				 background-color: #6ecad9;
+			}
+			&.map-pending:before {
+				 background-color: #c6e6f0;
+			}
+			&.map-no:before {
+				 background-color: #e6e6e6;
+			}
+		}
+	}
+	.state-list {
+		text-align: center;
+		padding: $content-padding-small;
+		@media screen and ($tablet) {
+			padding: $content-padding-medium;
+		}
+		@media screen and ($laptop) {
+			padding: $content-padding-large;
+		}
+		.divider-light:after {
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+// IE 10 Adjustments for Product Map
+html.no-webgl {
+	.map-svg canvas {
+		max-height: 400px;
+		@media screen and ($mobile-lg) {
+			max-height: 425px;
+		}
+		@media screen and ($tablet) {
+			max-height: 400px;
+		}
+		@media screen and ($laptop) {
+			max-height: 630px;
+		}
+	}
+}

@@ -1,0 +1,26 @@
+figure {
+  margin: 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+  height: auto;
+}
+
+img {
+	&.alignleft {
+		display: block;
+		margin-right: auto;
+	}
+	&.aligncenter {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	&.alignright {
+		display: block;
+		margin-left: auto;
+	}
+}

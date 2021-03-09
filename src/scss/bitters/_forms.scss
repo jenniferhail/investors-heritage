@@ -1,0 +1,519 @@
+$_form-background-color: #fff;
+$_form-box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+$_form-box-shadow-focus: $_form-box-shadow, 0 0 5px rgba($action-color, 0.7);
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: $small-spacing / 2;
+}
+
+input,
+select,
+textarea {
+  display: block;
+  font-family: $base-font-family;
+  font-size: 16px;
+}
+
+#{$all-text-inputs} {
+  appearance: none;
+  background-color: $_form-background-color;
+  // border: $base-border;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid $gray;
+  box-sizing: border-box;
+  margin-bottom: $small-spacing;
+  padding: $base-spacing / 3;
+  // transition: border-color $base-duration $base-timing;
+  width: 100%;
+
+  &:hover {
+    border-color: shade($base-border-color, 20%);
+  }
+
+  &:focus {
+    border-color: $action-color;
+    box-shadow: $_form-box-shadow-focus;
+    outline: none;
+  }
+
+  &:disabled {
+    background-color: shade($_form-background-color, 5%);
+    cursor: not-allowed;
+
+    &:hover {
+      border: $base-border;
+    }
+  }
+
+  &::placeholder {
+    color: tint($base-font-color, 40%);
+  }
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  display: inline;
+  margin-right: $small-spacing / 2;
+  label {
+	  display: block;
+	  margin: 0;
+	  padding-left: 30px;
+  }
+}
+
+[type="file"] {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+select {
+  margin-bottom: $small-spacing;
+  width: 100%;
+}
+
+[type="checkbox"],
+[type="radio"],
+[type="file"],
+select {
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
+  }
+}
+
+input[type=submit] {
+    display: block;
+    position: relative;
+    max-width: 100%;
+    padding: 10px 15px 9px;
+	background-color: $clear;
+    color: $blue;
+	border: 1px solid $clear;
+    text-align: center;
+    line-height: 1;
+    text-decoration: none;
+    transition: border $base-duration $base-timing;
+
+	text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+
+	&:hover {
+		border: 1px solid $blue;
+	}
+
+}
+
+// Gravity Forms
+// Override IE Gravity forms submit button padding
+body .gf_browser_ie.gform_wrapper {
+	.gform_footer input.button {
+		padding: 10px 15px 9px;
+	}
+}
+
+// Confirmation Message
+body .gform_confirmation_wrapper {
+	.gform_confirmation_message {
+		text-align: center;
+		padding: 30px 0 0;
+	}
+}
+
+// Confirmation Message
+.gform_confirmation_wrapper {
+	text-align: center;
+	padding: 30px 0 0;
+}
+
+body .gform_wrapper {
+
+	// Style the gated content form
+	.gated-content {
+		max-width: 700px;
+		margin: auto;
+	}
+
+	.gform_body {
+		padding-top: 30px;
+	}
+
+	// .field_sublabel_below .ginput_complex.ginput_container label,
+	// .field_sublabel_below div[class*="gfield_time_"].ginput_container label,
+	// label.gfield_label {
+	//     height: 0;
+	// 	width: 0;
+	//     overflow: hidden;
+	//     visibility: hidden;
+	// 	font-size: 0;
+	// 	color: $white;
+	// }
+
+	// ::placeholder {
+	//     height: 0;
+	// 	width: 0;
+	//     overflow: hidden;
+	//     visibility: hidden;
+	// 	font-size: 0;
+	// 	color: $white;
+	// }
+
+	// Labels
+
+	// label:not(.gfield_label_before_complex) {
+	// 	position: relative;
+	// 	top: 38px;
+	// }
+	//
+	// // .field_sublabel_above {
+	// // 	label:not(.gfield_label_before_complex) {
+	// // 		position: relative;
+	// // 		top: 38px;
+	// // 	}
+	// // }
+	// //
+	// // .field_sublabel_below {
+	// // 	label:not(.gfield_label_before_complex) {
+	// // 		position: relative;
+	// // 		top: 0;
+	// // 	}
+	// // }
+	//
+	// .top_label .show-label label.gfield_label {
+	//     top: 0;
+	//     position: relative;
+	//     padding-top: 30px;
+	// }
+	//
+	// .ginput_complex {
+	// 	label:not(.gfield_label_before_complex) {
+	// 		position: relative;
+	// 		top: 26px;
+	// 	}
+	// 	label {
+	// 		position: relative;
+	// 		// top: 25px !important;
+	// 	}
+	// }
+	//
+	// .field_sublabel_below {
+	// 	.ginput_complex label:not(.gfield_label_before_complex) {
+	// 	    position: absolute;
+	// 	    top: 2px;
+	// 		left: 0;
+	// 		right: 8px;
+	// 	}
+	// }
+
+	// ul li.gfield,
+	// ul li .gfield,
+	// // &.gf_browser_chrome ul.gform_fields li.gfield span.name_first,
+	// // &.gf_browser_chrome ul.gform_fields li.gfield span.name_middle,
+	// // &.gf_browser_chrome ul.gform_fields li.gfield span.name_last,
+	// ul.gform_fields li.gfield span.name_first,
+	// ul.gform_fields li.gfield span.name_middle,
+	// ul.gform_fields li.gfield span.name_last,
+	// .ginput_complex span {
+	// 	position: relative;
+	// }
+	//
+	// label.gfield_label,
+	// .field_sublabel_above .ginput_complex.ginput_container label,
+	// // .field_sublabel_below .ginput_complex.ginput_container label,
+	// .field_sublabel_above div[class*="gfield_time_"].ginput_container label,
+	// .field_sublabel_below div[class*="gfield_time_"].ginput_container label,
+	// .field_sublabel_above div[class*="gfield_date_"].ginput_container label,
+	// .field_sublabel_below div[class*="gfield_date_"].ginput_container label {
+	//     // position: absolute;
+	// 	position: relative;
+	//     // top: 10px;
+	// 	// z-index: 99;
+	// }
+	//
+	// label.gfield_label.gfield_label_before_complex {
+	//     position: relative;
+	//     // top: 0;
+	// }
+
+	.top_label .gfield_label,
+	label.gfield_label {
+		font-weight: 300;
+		color: #757575;
+	}
+
+	.top_label label.gfield_label.gfield_label_before_complex {
+	    font-weight: 500;
+	    color: #0d1d37;
+	}
+
+	// span.address_state label {
+	//     border-bottom: 1px solid $gray;
+	//     padding-bottom: 4px;
+	// 	top: -1;
+	// 	z-index: -1;
+	// }
+
+	.field_sublabel_above .ginput_complex.ginput_container label,
+	.field_sublabel_below .ginput_complex.ginput_container label,
+	.field_sublabel_above div[class*="gfield_time_"].ginput_container label,
+	.field_sublabel_below div[class*="gfield_time_"].ginput_container label,
+	.field_sublabel_above div[class*="gfield_date_"].ginput_container label,
+	.field_sublabel_below div[class*="gfield_date_"].ginput_container label {
+		font-weight: 300;
+		font-size: inherit;
+		letter-spacing: inherit;
+		color: #757575;
+	}
+
+	.hide-label .gfield_label {
+		font-size: 0;
+		visibility: hidden;
+		width: 0;
+		height: 0;
+	}
+
+	// .active .gfield_label {
+	// 	top: 8px;
+	// }
+
+	// End Labels
+
+	&.gf_browser_chrome .gfield_checkbox li input[type=checkbox],
+	&.gf_browser_chrome .gfield_radio li input[type=radio],
+	&.gf_browser_chrome .gfield_checkbox li input {
+		margin: 5px 5px 5px !important;
+		width: 16px !important;
+		height: 16px;
+	}
+
+	.gform_footer {
+		text-align: center;
+	}
+
+	.gsection {
+		border: 0;
+	}
+
+	.gsection .gfield_label,
+	h2.gsection_title,
+	h3.gform_title {
+	    font-size: 24px;
+		font-weight: 300;
+	    letter-spacing: 2.5px !important;
+	    text-align: center;
+	}
+
+	li.horizontal .ginput_container_radio ul.gfield_radio {
+	    display: flex;
+	    justify-content: space-evenly;
+	    justify-content: center;
+		flex-wrap: wrap;
+		li {
+			margin: 0 30px 15px;
+			overflow: visible;
+		}
+	}
+
+	// Add a class to center form fields
+	.gfield.center input {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	ul,
+	ol {
+		li {
+			list-style: none;
+		}
+	}
+
+	select {
+	    background-color: $white;
+	}
+
+	.gfield_checkbox,
+    .gfield_radio {
+
+         li {
+            display: flex;
+			overflow: visible;
+
+            &:first-child {
+                margin-left: 0;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+        }
+
+    }
+
+    .gfield {
+
+        .gfield_checkbox,
+        .gfield_radio {
+
+            li {
+				position: relative;
+
+               label {
+				   display: block;
+				   margin: 0 0 0 10px;
+				   padding-left: 0;
+				   white-space: nowrap; // IE fix for the contact form radio button labels
+				   position: static;
+               }
+
+               label:before {
+					content: '';
+					position: absolute;
+					top: 4px;
+					left: 2px;
+					width: 12px;
+					height: 12px;
+					border-radius: 50%;
+					border: 3px solid #fff;
+					box-shadow: 0 0 0 2px #a9a9a9;
+					opacity: 0.6;
+               }
+
+               input[type="checkbox"]:checked,
+               input[type="radio"]:checked {
+
+                   // ~ label {
+                   //     color: $light-blue;
+                   //     opacity: 1;
+                   // }
+
+                   ~ label:before {
+                       background-color: $white;
+					   border: 3px solid $light-blue;
+                       box-shadow: 0 0 0 2px $light-blue;
+                       opacity: 1;
+                   }
+
+               }
+
+               input[type="checkbox"]:hover,
+               input[type="radio"]:hover {
+
+                   ~ label {
+					   cursor: pointer;
+                   //     color: $light-blue;
+                   //     opacity: 1;
+                   }
+
+                   // ~ label:before {
+                   //     box-shadow: 0 0 0 2px $light-blue;
+                   //     opacity: 1;
+                   // }
+
+               }
+
+           }
+
+        }
+
+    }
+
+	.gfield_required {
+		color: $blue;
+	}
+
+    // Radio Buttons
+    input[type="checkbox"],
+    input[type="radio"] {
+        width: 0;
+        height: 0;
+        margin: 0;
+        opacity: 0;
+
+        &:focus {
+            border-color: $action-color;
+            border-radius: 50%;
+            box-shadow: $_form-box-shadow, 0 1px 5px 3px rgba($action-color, 0.7);
+            outline: none;
+        }
+
+    }
+
+    .radio-option, .checkbox-option {
+        display: inline-block;
+        padding: 0 15px;
+    }
+
+	// Errors
+	div.validation_error {
+		color: $blue;
+		font-size: 1em;
+		font-weight: 700;
+		margin-top: 60px;
+		margin-bottom: 25px;
+		border-top: 2px solid $blue;
+		border-bottom: 2px solid $blue;
+		padding: 16px 0 16px 0;
+		clear: both;
+		width: 100%;
+		text-align: center;
+	}
+
+	li.gfield.gfield_error,
+	li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+		background-color: transparent;
+		margin-bottom: 0 !important;
+		border-top: 0;
+		border-bottom: 0;
+		padding-bottom: 0;
+		padding-top: 0;
+		box-sizing: border-box;
+	}
+
+	li.gfield_error input:not([type='radio']):not([type='checkbox']):not([type='submit']):not([type='button']):not([type='image']):not([type='file']),
+	li.gfield_error textarea {
+	    border: 1px solid $blue;
+	}
+
+	.gfield_error .gfield_label,
+	.validation_message,
+	li.gfield_error div.ginput_complex.ginput_container label,
+	li.gfield_error ul.gfield_checkbox,
+	li.gfield_error ul.gfield_radio {
+		color: $blue;
+	}
+
+	li.gfield.gfield_error.gfield_contains_required div.validation_message {
+		color: $blue;
+	}
+
+	// Center align the error message for radio buttons
+	.ginput_container.ginput_container_radio ~ .validation_message {
+		text-align: center;
+	}
+
+}

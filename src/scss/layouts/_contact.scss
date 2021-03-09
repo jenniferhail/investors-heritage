@@ -1,0 +1,45 @@
+.layout.map {
+	.content {
+		padding: $content-padding-small;
+		@media screen and ($tablet) {
+			padding: $content-padding-medium;
+		}
+		@media screen and ($laptop) {
+			padding: $content-padding-large;
+		}
+	}
+	.intro {
+		text-align: center;
+		margin-bottom: 60px;
+	}
+	.col {
+		&.info {
+			width: 100%;
+			text-align: center;
+		    padding-bottom: 30px;
+			@media screen and ($show-mobile) {
+				width: 30%;
+				padding-right: 30px;
+			    padding-bottom: 0;
+				text-align: left;
+			}
+		}
+		&.map {
+			width: 100%;
+			@media screen and ($show-mobile) {
+				width: 70%;
+			}
+		}
+	}
+	.smallcaps {
+		// margin-bottom: 3em;
+		letter-spacing: 3.25px;
+		color: $light-blue;
+	}
+
+}
+
+#ih-map {
+  height: 400px;
+  background-color: grey;
+}

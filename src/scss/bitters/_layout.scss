@@ -1,0 +1,87 @@
+html {
+  background-color: $viewport-background-color;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+}
+
+// Sticky footer
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+.content-wrapper {
+  flex: 1 0 auto;
+}
+.footer {
+  flex-shrink: 0;
+}
+
+// Grid
+.grid {
+    &-row,
+    &-col {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        &.space-between {
+            justify-content: space-between;
+        }
+    }
+    &-row {
+        flex-direction: row;
+    }
+    &-col {
+        flex-direction: column;
+    }
+}
+
+.large-grid {
+    &-row {
+        @media screen and ($tablet) {
+            flex-direction: row;
+        }
+    }
+    &-col {
+        @media screen and ($tablet) {
+            flex-direction: column;
+        }
+    }
+}
+
+.one-half {
+    width: 100%;
+    @media screen and ($tablet) {
+        width: 50%;
+    }
+}
+
+.one-quarter {
+    width: 100%;
+    @media screen and ($tablet) {
+        width: 25%;
+    }
+}
+
+.three-quarters {
+    width: 100%;
+    @media screen and ($tablet) {
+        width: 75%;
+    }
+}

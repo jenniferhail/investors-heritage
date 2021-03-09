@@ -1,0 +1,141 @@
+// Styles
+.smallcaps {
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2.5px;
+	@media screen and ($mobile-sm) {
+		font-size: 14px;
+	}
+}
+
+.large-serif {
+    font-family: $serif;
+	font-size: 22px;
+	letter-spacing: 1.5px;
+    font-weight: 400;
+	@media screen and ($mobile-sm) {
+		font-size: 30px;
+		letter-spacing: 2px;
+	}
+	@media screen and ($mobile-lg) {
+		font-size: 34px;
+		letter-spacing: 3.5px;
+	}
+	@media screen and ($tablet) {
+		font-size: 40px;
+	    letter-spacing: 4.5px;
+	}
+}
+
+.large-sans-serif {
+    font-family: $sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+	@media screen and ($mobile-sm) {
+		font-size: 40px;
+	    letter-spacing: 4.5px;
+	}
+}
+
+.sans-serif-title {
+	font-family: $sans-serif;
+	font-size: 24px;
+	letter-spacing: 2.5px;
+	color: $blue;
+	@media screen and ($tablet) {
+		font-size: 30px;
+		letter-spacing: 3px;
+	}
+}
+
+.text-center {
+    text-align: center;
+}
+
+html {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: 100%;
+  font-weight: $base-font-weight;
+  line-height: $base-line-height;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: $heading-font-family;
+  font-size: modular-scale(1);
+  font-weight: $heading-font-weight;
+  text-transform: uppercase;
+  line-height: $heading-line-height;
+  letter-spacing: $heading-letter-spacing;
+  margin: 0 0 $small-spacing;
+}
+
+h1, .h1 {
+	font-size: 2em;
+}
+h2, .h2 {
+	font-size: 20px;
+	@media screen and ($mobile-sm) {
+		font-size: 1.5em;
+	}
+}
+h3, .h3 {
+	font-size: 1.33em;
+}
+h4, .h4 {
+	font-size: 1.17em;
+}
+h5, .h5 {
+	font-size: 0.83em;
+}
+h6, .h6 {
+	font-size: 0.67em;
+}
+
+p {
+  margin: 0 0 $small-spacing;
+  letter-spacing: 0.5px;
+}
+
+a {
+  color: $action-color;
+  text-decoration-skip: ink;
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+
+  &:hover {
+    color: shade($action-color, 25%);
+  }
+
+  &:focus {
+    outline: $focus-outline;
+    outline-offset: $focus-outline-offset;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin: $base-spacing 0;
+}
+
+.copy {
+    margin-bottom: 0;
+    &.copy-bold {
+        font-weight: 500;
+    }
+	+ .copy {
+		padding-top: $base-spacing;
+	}
+	+ .buttons {
+		padding-top: $base-spacing;
+	}
+}

@@ -1,0 +1,78 @@
+.footer {
+    text-align: center;
+    @media screen and ($tablet) {
+        text-align: left;
+    }
+	.footer-menu {
+		margin-bottom: 4em;
+		@media screen and ($tablet) {
+	        margin-bottom: 0;
+	    }
+	}
+    .content {
+        padding: 4em;
+        @media screen and ($tablet) {
+            padding: 4em 0;
+        }
+    }
+    .col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .first {
+        order: 1;
+    }
+    .second {
+        order: 2;
+    }
+    .third {
+        order: 3;
+    }
+    .align-right {
+        @media screen and ($tablet) {
+            text-align: right;
+        }
+    }
+    .sep-footer {
+        display: block;
+        padding-left: 3rem;
+        margin-right: 3rem;
+        border-right: $base-border;
+    }
+	.contact-info,
+	.copyright {
+		p {
+			font-size: 11px;
+			letter-spacing: 1.75px;
+			text-transform: uppercase;
+		}
+	}
+	.copyright {
+		display: block;
+		padding-top: 10px;
+	    margin-bottom: -2em;
+		width: 100%;
+	    order: 4;
+	    text-align: center;
+	}
+}
+.ih-logo-footer {
+    margin: 0 auto 0.5em;
+	width: 100%;
+}
+.footer-logos {
+	margin: 0 auto 1em;
+	@media screen and ($tablet) {
+		margin: 0 0 1em;
+	}
+	img {
+		display: inline-block;
+		margin: 0 0 0 auto;
+        width: 100px;
+        height: 100px;
+    }
+    .inc-logo {
+        padding: 7px;
+    }
+}

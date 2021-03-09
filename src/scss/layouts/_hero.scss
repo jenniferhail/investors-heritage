@@ -1,0 +1,131 @@
+.layout.hero {
+    position: relative;
+
+    .background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: -1;
+
+        > * {
+            color: $light-blue;
+        }
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: $blue-overlay;
+        }
+
+    }
+
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+		height: 100vh;
+        z-index: 1;
+        color: $light-blue;
+    }
+
+    .hero-inner {
+        padding: 0 2em;
+
+		@media screen and ($mobile-lg) {
+			padding: 0 4em;
+		}
+
+        @media screen and ($tablet) {
+            padding: 0;
+        }
+
+    }
+
+    .hero-subtitle {
+        margin-bottom: $base-spacing;
+		font-size: 20px;
+		letter-spacing: 2px;
+		@media screen and ($mobile-sm) {
+			font-size: 24px;
+			letter-spacing: 2.5px;
+		}
+		@media screen and ($laptop) {
+			font-size: 30px;
+			letter-spacing: 3px;
+		}
+		@media screen and ($desktop) {
+			font-size: 32px;
+	        letter-spacing: 4.25px;
+		}
+	}
+
+    .hero-title {
+		font-weight: 300;
+		font-size: 28px;
+		letter-spacing: 2.5px;
+		@media screen and ($mobile-sm) {
+			font-size: 36px;
+			letter-spacing: 3px;
+		}
+		@media screen and ($mobile-lg) {
+			font-size: 40px;
+	        letter-spacing: 3.5px;
+		}
+		@media screen and ($tablet) {
+			font-size: 45px;
+	        letter-spacing: 4.5px;
+		}
+		@media screen and ($laptop) {
+			font-size: 50px;
+	        letter-spacing: 5px;
+		}
+		@media screen and ($desktop) {
+			font-size: 60px;
+	        letter-spacing: 5.5px;
+		}
+		.period {
+			margin-left: -0.1em;
+		}
+    }
+
+    .scroll-down {
+		display: none;
+        position: absolute;
+        bottom: 20%;
+		left: 50%;
+		transform: translateX(-50%);
+        &:focus {
+            outline: 0;
+        }
+    }
+
+    &.overlap-bottom {
+        margin-bottom: 0;
+
+		.content {
+			height: 110vh;
+		}
+
+        @media screen and ($tablet) {
+            margin-bottom: -60px;
+        }
+
+    }
+
+}
+
+.layout:first-child.hero {
+	.scroll-down {
+        display: inline;
+    }
+}

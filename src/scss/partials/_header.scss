@@ -1,0 +1,153 @@
+.header {
+    z-index: 99;
+    width: 100%;
+	transition: background-color 600ms ease-in-out;
+
+	.ih-logo {
+		.logo-svg,
+		.logomark,
+		.wordmark {
+			transition: fill $base-duration $base-timing;
+		}
+	}
+
+	&.dark {
+		// Change the logo & hamburger menu color when mobile menu is open
+		.ih-logo {
+			.logomark,
+			.wordmark {
+				fill: $blue;
+			}
+		}
+		.mobile-nav-btn .btn-line {
+			background-color: $blue;
+		}
+	}
+
+	&.overlap,
+	&.stack {
+		position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        transition: background-color 600ms ease-in-out;
+	}
+
+    &.overlap {
+		padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: $clear;
+		transition: padding 300ms ease-in-out;
+		@media screen and ($tablet) {
+			padding-top: 60px;
+            padding-bottom: 0;
+		}
+		.header-nav .sub-menu {
+			background-color: $clear;
+		}
+    }
+
+    &.stack {
+		padding-top: 30px;
+        padding-bottom: 30px;
+        background-color: $blue;
+		.header-nav .sub-menu {
+			background-color: $blue;
+		}
+    }
+
+    &.reveal {
+		&.overlap,
+        &.stack {
+            background-color: $white;
+            transition:
+				opacity 500ms ease-in-out,
+				transform 500ms ease-in-out,
+				background-color 600ms ease-in-out,
+				padding 300ms ease-in-out;
+        }
+		&.overlap {
+			@media screen and ($tablet) {
+				padding-top: 30px;
+		        padding-bottom: 30px;
+			}
+		}
+
+        .mobile-nav-btn .btn-line {
+            background-color: $blue;
+        }
+        .header-nav .sub-menu {
+            background-color: $white;
+        }
+        .ih-logo {
+            // width: 215px;
+            .logo-svg,
+			.logomark,
+			.wordmark {
+                fill: $blue;
+            }
+        }
+    }
+
+    // Only transition the nav on desktop
+    @media screen and ($show-mobile) {
+        &.overlap,
+    	&.stack {
+    		position: absolute;
+    	}
+        &.hide {
+            opacity: 0;
+        }
+
+        &.transition {
+            position: fixed;
+            padding-top: 20px;
+            padding-bottom: 15px;
+            // background-color: $white;
+            transform: translateY(-50px);
+            transition: all 500ms ease-in-out;
+            .ih-logo {
+                width: 215px;
+                .logo-svg {
+                    fill: $blue;
+                }
+            }
+        }
+        &.reveal {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 500ms ease-in-out;
+            .header-nav .menu-item {
+                a {
+                    color: $blue;
+                    &:after {
+                        background-color: $blue;
+                    }
+                    &:hover:after {
+                        background-color: $blue;
+                    }
+                }
+                &.icon a {
+                    &:hover {
+                        color: $light-blue;
+                    }
+                }
+            }
+
+            // .header-nav .sub-menu {
+            //     background-color: $white;
+            // }
+        }
+    }
+
+    .grid-row {
+        justify-content: space-between;
+        align-items: center;
+		flex-wrap: nowrap;
+        // @media screen and ($tablet) {
+        //     align-items: center;
+        // }
+
+    }
+
+}

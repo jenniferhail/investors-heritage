@@ -1,0 +1,28 @@
+{
+  "name": "mightily",
+  "title": "Big things come in small packages.",
+  "author": "Mightily",
+  "url": "http://mightily.com",
+  "version": "1.0.0",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "fancy-log": "^1.0",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^5.0",
+    "gulp-concat": "^2.0",
+    "gulp-cssnano": "^2.0",
+    "gulp-file-include": "^2.0.1",
+    "gulp-header": "^2.0",
+    "gulp-jshint": "^2.0.0",
+    "gulp-rename": "^1.0",
+    "gulp-sass": "^4.1",
+    "gulp-sourcemaps": "^2.0",
+    "gulp-uglify": "^3.0",
+    "gulp-util": "^3.0.8",
+    "jshint": "^2.12.0",
+    "natives": "^1.1.6",
+    "require": "^2.0",
+    "requirejs": "^2.0"
+  }
+}

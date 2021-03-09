@@ -1,0 +1,104 @@
+// Font
+@import url("https://use.typekit.net/tny3cak.css");
+@import url('https://fonts.googleapis.com/css?family=Cinzel:400,700');
+@import url('https://fonts.googleapis.com/css?family=Quattrocento');
+
+@font-face {
+  font-family: 'Avenir';
+  src: url('/assets/fonts/AvenirLTStd-Book.otf') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Assets
+$logo: "/assets/img/IH-logo-horizontal.png";
+
+// Breakpoints
+$desktop: "min-width: 1800px";
+$laptop: "min-width: 1260px";
+$tablet: "min-width: 768px";
+$mobile-lg: "min-width: 640px";
+$mobile-sm: "min-width: 480px";
+$show-mobile: "min-width: 950px";
+
+// Typography
+$sans-serif: 'neuzeit-grotesk', 'Helvetica Neue', Helvetica, Arial;
+// $sans-serif: 'Avenir', 'Helvetica Neue', Helvetica, Arial;
+// $serif: 'athelas', 'Times New Roman', serif;
+$serif: 'Cinzel', serif;
+$q-serif: 'Quattrocento', serif;
+// $serif: 'orpheuspro', serif;
+
+$heading-font-family: $sans-serif;
+$base-font-family: $sans-serif;
+$icons-light: "Font Awesome 5 Light";
+$icons-solid: "Font Awesome 5 Solid";
+
+// Line Height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Font Weights
+$light: 300;
+$regular: 400;
+$bold: 700;
+$base-font-weight: $light;
+$heading-font-weight: $light;
+$heading-letter-spacing: 0.065em;
+
+// Other Sizes
+$base-border-radius: 0;
+$base-spacing: 1.5em;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Padding
+$content-padding-small: 4em 30px;
+$content-padding-medium: 4em 5em;
+$content-padding-large: 4em 9em;
+
+// Colors
+$clear: rgba(0, 0, 0, 0);
+$white: #ffffff;
+$blue: #0d1d37;
+$blue-overlay: rgba(13, 29, 55, 0.8);
+$light-blue: #92d5d8;
+$light-blue-faded: #d4eaea;
+$light-blue-overlay: rgba(204, 229, 229, 0.96);
+// $dark-gray: #333;
+$gray: #a9a9a9;
+// $light-gray: #ddd;
+
+// Brand Colors
+$primary: $blue;
+$secondary: $light-blue;
+
+// Map Colors
+$yes: #6ecad9;
+$pending: #c1e6ee;
+$no: $gray;
+
+// Font Colors
+$base-font-color: $blue;
+$action-color: $blue;
+
+// Border
+$base-border-color: $white;
+$base-border: 1px solid $base-border-color;
+
+$text-border-color: $light-blue;
+$text-border: 1px solid $text-border-color;
+
+// Background Colors
+$viewport-background-color: $white;
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 300ms;
+$base-timing: ease-in-out;
+$opacity-hover: 0.85;
